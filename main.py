@@ -26,7 +26,7 @@ def main():
         else:
             break
 
-    print(partners)
+    show_result()
 
 
 def get_partners(file_name):
@@ -41,11 +41,10 @@ def get_partners(file_name):
             known_partners = elements[2:]
             known_partners_length = len(known_partners)
 
-            print(known_partners)
             completed_partners = [0] * int(known_partners[-1])
 
             for x in known_partners:
-                completed_partners[int(x)-1] = 1
+                completed_partners[int(x) - 1] = 1
 
             partners[partner_number] = (partner_name, known_partners_length, completed_partners)
 
@@ -63,17 +62,13 @@ def remove_partner(partner_number):
         completed_partners = value[2]
         if int(partner_number) <= len(completed_partners) and completed_partners[int(partner_number) - 1] == 1:
             known_partners_length = known_partners_length - 1
-            completed_partners[int(partner_number)-1] = 0
+            completed_partners[int(partner_number) - 1] = 0
             partners[key] = (partner_name, known_partners_length, completed_partners)
 
 
-#def save_result(list):
-#    file = open("result.txt", "w")
-#    for idx, pair in enumerate(list):
-#        file.write("{} {}\n".format(pair[0], idx+1))
-#        file.write("{} {}\n".format(pair[1], idx+1))
-#    file.close()
-
+def show_result():
+    for partner in partners.items():
+        print(partner[0] + ", " + partner[1][0])
 
 
 main()
