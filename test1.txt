@@ -1,0 +1,13 @@
+1,Socio A,4,5,8,9,10
+2,Socio B,3,5,6,7,11,12,13
+3,Socio C,2,5,10,11,12
+4,Socio D,1,6,7,8
+5,Socio E,1,2,3,11,12
+6,Socio F,2,4,7
+7,Socio G,2,4,6,11,12,13
+8,Socio H,1,4
+9,Socio J,1
+10,Socio K,1,3
+11,Socio L,2,3,5,7,13
+12,Socio M,2,3,5,7,13
+13,Socio N,2,7,11,12
