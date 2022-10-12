@@ -19,6 +19,8 @@ def main():
 
     while len(partners.items()) >= 5:
         candidate = partners_list[0]
+        print("len: ", len(partners.items()))
+        print("candidate: ", candidate)
         if candidate[0] <= 3:
             del partners[candidate[1]]
             remove_partner(candidate[1])
@@ -46,7 +48,7 @@ def get_partners(file_name):
             for x in known_partners:
                 completed_partners[int(x) - 1] = 1
 
-            partners[partner_number] = (partner_name, known_partners_length, completed_partners)
+            partners[partner_number] = (partner_name, known_partners_length, completed_partners) # {'4': ('4', 'Lituania', 3, [0, 0, 0, 0, 1, 1, 1]),
 
 
 def create_heap():
@@ -56,7 +58,9 @@ def create_heap():
 
 
 def remove_partner(partner_number):
+    print("remove partner")
     for key, value in partners.items():
+        print("key", key, "value", value)
         partner_name = value[0]
         known_partners_length = value[1]
         completed_partners = value[2]
@@ -67,6 +71,7 @@ def remove_partner(partner_number):
 
 
 def show_result():
+    print("show result: ", partners)
     for partner in partners.items():
         print(partner[0] + ", " + partner[1][0])
 
